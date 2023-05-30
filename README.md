@@ -7,8 +7,7 @@ Nous avons choisi d'utiliser l'algorithme génétique, une technique d'optimisat
 Notre approche consiste à créer plusieurs instances d'algorithmes génétiques indépendants, appelés "îles", qui travaillent en parallèle sur différentes sous-populations de solutions. Chaque île exécute son propre algorithme génétique, avec des paramètres et des opérateurs génétiques spécifiques, ce qui permet d'introduire de la diversité et d'explorer davantage l'espace des solutions.
 
 Les îles communiquent entre elles périodiquement, échangeant les meilleurs individus afin de partager les connaissances et d'explorer de nouvelles régions de l'espace de recherche. Ce processus de migration favorise l'émergence de solutions optimales en évitant les convergences prématurées vers des optima locaux.
-
-
+[a](https://github.com/HOUD-FatimaEzzahra/GA-implementation-using-MAS/blob/main/docs/Capture.PNG)
 ## Fonctionnalités principales
 - Implémentation de l'algorithme génétique avec des systèmes multi-agents.
 - Architecture distribuée permettant l'exécution parallèle sur des machines distinctes.
