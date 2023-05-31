@@ -1,26 +1,30 @@
-package ma.enset;
+package ma.enset.sma;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public class Individual implements Comparable {
-    private int []chromosome=new int[GAUtils.CHROMOSOME_SIZE];
+    private char []chromosome=new char[GAUtils.CHROMOSOME_SIZE];
     private int fitness;
 
     public Individual() {
         Random random=new Random();
         for (int i=0;i<GAUtils.CHROMOSOME_SIZE;i++) {
-            chromosome[i]= random.nextInt(2);
+            int index=random.nextInt(GAUtils.ALPHABET.length());
+            chromosome[i]=GAUtils.ALPHABET.charAt(index);
         }
     }
 
-    public Individual(int[] chromosome) {
+    public Individual(char[] chromosome) {
         this.chromosome = Arrays.copyOf(chromosome,GAUtils.CHROMOSOME_SIZE);
     }
 
     public void calculateFintess(){
-        for (int gene:chromosome) {
-            fitness+=gene;
+        fitness=0;
+        for(int i=0;i<GAUtils.CHROMOSOME_SIZE;i++){
+            if(chromosome[i]==GAUtils.TARGET_SOLUTION.charAt(i)){
+                fitness++;
+            }
         }
     }
 
@@ -28,11 +32,11 @@ public class Individual implements Comparable {
         return fitness;
     }
 
-    public int[] getChromosome() {
+    public char[] getChromosome() {
         return chromosome;
     }
 
-    public void setChromosome(int[] chromosome) {
+    public void setChromosome(char[] chromosome) {
         this.chromosome = chromosome;
     }
 
