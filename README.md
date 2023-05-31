@@ -1,12 +1,9 @@
 # GA-implementation-using-MAS 
-Ce projet propose une solution d'optimisation basée sur l'algorithme génétique avec des systèmes multi-agents. L'objectif est de résoudre un problème complexe d'optimisation en utilisant une approche évolutive inspirée du concept de l'évolution biologique.
+## Description
+Ce projet vise à résoudre le problème de trouver une phrase spécifique en utilisant des agents multi-agents et des algorithmes génétiques. L'objectif est de déterminer quel agent est capable de trouver la phrase donnée en premier parmi un groupe d'agents concurrents. L'utilisation d'algorithmes génétiques permet d'explorer efficacement l'espace de recherche et de trouver des solutions optimales. Les agents travaillent de manière parallèle et communiquent entre eux pour échanger des informations sur les solutions trouvées. Cette approche permet d'optimiser la recherche de la phrase cible et de déterminer rapidement l'agent gagnant.
 
 ## Solution proposée
-Nous avons choisi d'utiliser l'algorithme génétique, une technique d'optimisation basée sur les principes de l'évolution naturelle, pour résoudre ce problème. En utilisant des systèmes multi-agents, nous avons étendu l'algorithme génétique pour permettre une résolution parallèle et distribuée, ce qui améliore les performances et la capacité de recherche de solutions optimales.
-
-Notre approche consiste à créer plusieurs instances d'algorithmes génétiques indépendants, appelés "îles", qui travaillent en parallèle sur différentes sous-populations de solutions. Chaque île exécute son propre algorithme génétique, avec des paramètres et des opérateurs génétiques spécifiques, ce qui permet d'introduire de la diversité et d'explorer davantage l'espace des solutions.
-
-Les îles communiquent entre elles périodiquement, échangeant les meilleurs individus afin de partager les connaissances et d'explorer de nouvelles régions de l'espace de recherche. Ce processus de migration favorise l'émergence de solutions optimales en évitant les convergences prématurées vers des optima locaux.
+Pour résoudre ce problème, nous avons développé un système multi-agents basé sur des algorithmes génétiques. Chaque agent exécute une instance indépendante de l'algorithme génétique, générant ainsi une population d'individus qui évolue au fil des générations. Les agents travaillent en parallèle, exploitant les capacités de traitement parallèle des processeurs multicœurs. Lorsqu'un agent trouve la phrase cible, il envoie un message au système central pour signaler sa réussite. Le système central vérifie ensuite les messages reçus et identifie l'agent gagnant, qui est celui ayant trouvé la phrase cible en premier. Cette approche permet d'accélérer la recherche de la solution et de déterminer rapidement quel agent est le plus performant pour résoudre le problème.
 
 
 ![archi](https://github.com/HOUD-FatimaEzzahra/GA-implementation-using-MAS/blob/main/docs/Capture.PNG)
@@ -15,7 +12,7 @@ Les îles communiquent entre elles périodiquement, échangeant les meilleurs in
 ## Fonctionnalités principales
 - Implémentation de l'algorithme génétique avec des systèmes multi-agents.
 - Architecture distribuée permettant l'exécution parallèle sur des machines distinctes.
-- Mécanisme de migration pour échanger les meilleurs individus entre les îles et favoriser l'exploration de l'espace de recherche.
+- Mécanisme de migration pour échanger les meilleurs individus et favoriser l'exploration de l'espace de recherche.
 - Possibilité de configurer les paramètres de l'algorithme génétique, tels que la taille de la population, les opérateurs génétiques, les critères d'arrêt, etc.
 - Fonction d'évaluation pour mesurer la qualité des solutions générées par l'algorithme.
 
